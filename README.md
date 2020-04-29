@@ -1,4 +1,7 @@
-# 基于httpserver类实现的简易
+# 基于httpserver类实现的简易http服务器
+
+CSDN链接：https://blog.csdn.net/qq_40889820/article/details/105814895
+
 # 一、前言
 
 利用Java的`com.sun.net`包下的http类，实现的简易http服务器。全部代码已上传至github，链接在文末。
@@ -24,7 +27,7 @@ Run->Edit Configurations 设置参数
 
 点击运行
 
-![image-20200428144144719](D:\Study\Java\httpserver\README.assets\image-20200428144144719.png)
+![image-20200428144144719](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE0NDE0NDcxOS5wbmc?x-oss-process=image/format,png)
 
 这个“当前路径”设置的是：
 
@@ -53,27 +56,27 @@ private static final String WEB_ROOT = System.getProperty("user.dir")
 
 curl现在是win10自带的了吧，不用安装直接能用。不过需要注意的是windows和linux下的curl使用存在区别。
 
-![image-20200428145850223](D:\Study\Java\httpserver\README.assets\image-20200428145850223.png)
+![image-20200428145850223](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE0NTg1MDIyMy5wbmc?x-oss-process=image/format,png)
 
 ### 1.3、Postman请求
 
 Postman是个很棒的工具！
 
-![image-20200428150629364](D:\Study\Java\httpserver\README.assets\image-20200428150629364.png)
+![image-20200428150629364](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE1MDYyOTM2NC5wbmc?x-oss-process=image/format,png)
 
 ## 2、命令行上java -jar运行
 
 参考[IDEA打包jar包详尽流程](https://blog.csdn.net/weixin_42089175/article/details/89113271)打成jar包，放在E盘
 
-![image-20200428151144321](D:\Study\Java\httpserver\README.assets\image-20200428151144321.png)
+![image-20200428151144321](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE1MTE0NDMyMS5wbmc?x-oss-process=image/format,png)
 
 此时将webroot和httpserver.jar放在同一目录下
 
-![image-20200428151542441](D:\Study\Java\httpserver\README.assets\image-20200428151542441.png)
+![image-20200428151542441](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE1MTU0MjQ0MS5wbmc?x-oss-process=image/format,png)
 
 请求方式和1中介绍过的类似
 
-![image-20200428151657616](D:\Study\Java\httpserver\README.assets\image-20200428151657616.png)
+![image-20200428151657616](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE1MTY1NzYxNi5wbmc?x-oss-process=image/format,png)
 
 
 
@@ -212,11 +215,11 @@ private static void NotFoundResponse(HttpExchange httpExchange) throws Exception
 
 比较简单，看函数名称就知道在做啥。测试如下：
 
-![image-20200428134248810](D:\Study\Java\httpserver\README.assets\image-20200428134248810.png)
+![image-20200428134248810](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODEzNDI0ODgxMC5wbmc?x-oss-process=image/format,png)
 
 预览：
 
-![image-20200428134316511](D:\Study\Java\httpserver\README.assets\image-20200428134316511.png)
+![image-20200428134316511](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODEzNDMxNjUxMS5wbmc?x-oss-process=image/format,png)
 
 ### 3.3、满足条件
 
@@ -240,11 +243,11 @@ private static void HandlePostRequest(HttpExchange httpExchange, String Name, St
 
 和3.2差不多，就是返回内容有所更改
 
-![image-20200428133923463](https://raw.githubusercontent.com/wangzhebufangqi/ImageHosting/master/img/image-20200428133923463.png)
+![image-20200428133923463](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODEzMzkyMzQ2My5wbmc?x-oss-process=image/format,png)
 
 预览：
 
-![image-20200428134019690](D:\Study\Java\httpserver\README.assets\image-20200428134019690.png)
+![image-20200428134019690](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODEzNDAxOTY5MC5wbmc?x-oss-process=image/format,png)
 
 ## 4、处理Get请求
 
@@ -375,13 +378,13 @@ private static void FileSendResponse(HttpExchange httpExchange, File file, Strin
 
 例：
 
-![image-20200428141322487](D:\Study\Java\httpserver\README.assets\image-20200428141322487.png)
+![image-20200428141322487](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3dhbmd6aGVidWZhbmdxaS9JbWFnZUhvc3RpbmcvbWFzdGVyL2ltZy9pbWFnZS0yMDIwMDQyODE0MTMyMjQ4Ny5wbmc?x-oss-process=image/format,png)
 
 # 四、后记
 
 这是笔者对大三下选修的云计算实验二基础版本的实现，因为时间关系，直接选用了httpserver来实现。毕竟是两天内完成的，若文中有词不达意、错漏之处，敬请指正:fish:
 
-代码链接：待上传
+代码链接：https://github.com/wangzhebufangqi/httpserver
 
 
 
